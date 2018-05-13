@@ -41,8 +41,7 @@ public class Sceond_bot extends TelegramLongPollingBot {
          dbConnection = new DBConnection();
          try{
              Statement statement = dbConnection.getConnection().createStatement();
-             statement.execute("drop table Users");
-             statement.execute("CREATE TABLE IF NOT EXISTS Users(idUsers INT(10) NOT NULL AUTO_INCREMENT COMMENT ,chatID VARCHAR(45) NOT NULL COMMENT ,firstname VARCHAR(45) NOT NULL COMMENT , lastname VARCHAR(45) NOT NULL COMMENT ,phonenumber VARCHAR(15) NOT NULL COMMENT ,checked VARCHAR(45) NOT NULL COMMENT ,sendLink INT(1) NOT NULL COMMENT , administrator INT(1) NOT NULL COMMENT ,PRIMARY KEY (idUsers)  COMMENT , UNIQUE INDEX idUsers_UNIQUE (idUsers ASC)  COMMENT )" );
+             statement.execute("CREATE TABLE IF NOT EXISTS users(idUsers INT(10) NOT NULL AUTO_INCREMENT  ,chatID VARCHAR(45) NOT NULL  ,firstname VARCHAR(45) NOT NULL  , lastname VARCHAR(45) NOT NULL ,phonenumber VARCHAR(15) NOT NULL ,checked VARCHAR(45) NOT NULL ,sendLink INT(1) NOT NULL, administrator INT(1) NOT NULL ,PRIMARY KEY (idUsers)  , UNIQUE INDEX idUsers_UNIQUE (idUsers ASC)  );" );
 
          }catch (SQLException e){
 
